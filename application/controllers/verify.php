@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Verify extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,10 +19,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome');
+		$this->load->view('beauty/welcome');
 	}
 	public function test(){
-	    echo '123';
+	    $admin=$this->openapi_model->test();
+	    print_r($admin);
 	}
 }
 
