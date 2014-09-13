@@ -13,6 +13,10 @@ class Restful extends REST_Controller {
 // 	    print_r($admin);
 	}
 	public function user_post(){
-	    echo $this->post('id');
+	    $name = $this->post('name');
+	    $pass = $this->post('pass');
+	    $result = $this->openapi_model->verify($name,$pass)?array("status"=>"right"):array("status"=>"error");
+	    $this->response($result);
+// 	    $this->response($this->post('pass'));
 	}
 }
